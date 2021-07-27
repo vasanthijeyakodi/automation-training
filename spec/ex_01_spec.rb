@@ -7,7 +7,7 @@ describe 'the signin process', type: :feature do
     visit signin_url
     login_page = LoginPage.new
     login_page.log_in('turneruser@turner.com', 'turnertest')
-    sleep(50)
+    sleep (100)
     expect(current_url).to eq(dashboard_url)
   end
 end
