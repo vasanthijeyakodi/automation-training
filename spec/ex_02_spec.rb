@@ -9,9 +9,9 @@ describe 'the brand page', type: :feature do
     visit signin_url
     login_page = LoginPage.new
     login_page.log_in('turneruser@turner.com', 'turnertest')
-    page = Brandpage.new 
+    page = BrandPage.new 
     page.click_item('Brands')
-    sleep(5)
+    sleep(50)
     brand = page.brand?('Full frontal with Samantha Bee')
     expect(brand).to eq true
     # page.find_all('span.breadcrumb-inner')has any?('FULL FRONTAL WITH SAMANTHA BEE')

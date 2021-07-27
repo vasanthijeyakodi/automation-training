@@ -1,4 +1,4 @@
-class ListofBrands < SitePrism::Section
+class ListOfBrands < SitePrism::Section
   element :brand_title, 'span.brand-title'
   element :count_tile,'div.dataTables_info'
   def brand?(name)
@@ -7,16 +7,18 @@ class ListofBrands < SitePrism::Section
 end
 
 
-class Brandpage < SitePrism::Page
+class BrandPage < SitePrism::Page
   elements :menu_items, 'div.item-label'
-  sections :brand_list, ListofBrands, 'tr.odd, tr.even'
+  sections :brand_list, ListOfBrands, 'tr.odd, tr.even'
 
   def click_item(name) 
     item = menu_items.find{ |el|  el.text == name}
+    byebug
     item.click
   end
 
-  def brand?(name)
+  def brand?(name) 
+    byebug
     brand_list.map { |el| el.text }.any?{|el| el.brand?(name)}
   end
 
