@@ -10,9 +10,9 @@ describe 'the brand list', type: :feature do
      login_page = LoginPage.new
      login_page.log_in('turneruser@turner.com', 'turnertest')
      page = BrandPage.new 
-     sleep(90) 
+     sleep(50)
      page.click_item('Brands')
-     sleep(55)
+     sleep(50)
      obj = BrandList.new
      expect(obj.display_count).to eq "6"
      expect(obj.total_count).to eq "6"
