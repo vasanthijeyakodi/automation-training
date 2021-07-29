@@ -15,8 +15,8 @@ describe 'the brand list', type: :feature do
     page.click_item('Brands')
     obj = BrandList.new
     brand_listing = BrandListing.new
-    # fan_growth_agg_value = brand_listing.aggregate_functions.fan_growth_agg_value
     expect(brand_listing.sum_fan_growth).to eq(brand_listing.aggregate)
+    brand_listing.span.click
     expect(brand_listing.average_fan_growth).to eq(brand_listing.aggregate)
   end
 end
