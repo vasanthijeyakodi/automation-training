@@ -10,7 +10,7 @@ describe 'the brand list', type: :feature do
      login_page = LoginPage.new
      login_page.log_in('turneruser@turner.com', 'turnertest')
      page = BrandPage.new 
-     sleep(50)
+     sleep(60)
      page.click_item('Brands')
      sleep(50)
      obj = BrandList.new
